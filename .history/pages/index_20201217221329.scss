@@ -1,0 +1,39 @@
+.main {
+    width: 90%;
+    margin: auto;
+    
+    .header{
+        min-height: 200px;
+        background-color: rgb(178, 247, 224);
+    }
+    .contents{
+        min-height: 500px;
+        display: flex;
+        background-color: rgb(255, 218, 170);
+
+        // first child of the div will be css-ed
+        & > div{
+            background-color: #ABC;
+            flex: 1 0 100px;
+            height: 100px;
+            margin: 10px;
+            padding: 20px;
+            & > div:first-child {
+                //header
+                font-size: $fs;
+                //it is from global value from app.scss
+                font-weight: bold;
+                margin-bottom: 6px;
+                @include flexIt();
+                // @mixin flexIt from app.scss
+            }
+            & > div:nth-child(2) {
+                //description
+                font-size:$fs/1.2;
+                color:rgba(0,0,0,0.7);
+                @include flexIt();
+            }
+        }
+    }
+}
+//this is why you use scss. you can structure the css and style it easier not like making everything separetely.

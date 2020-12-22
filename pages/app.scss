@@ -1,0 +1,17 @@
+// body {
+//     background-color: aquamarine;
+// }
+
+//you can make a global variable. then you can use it into index.scss. you don't want to messup, so you should use it.
+$fs:20px;
+
+//you know, you have to put this flex box so many times over and over again, but if you make it global with @mixin and function name -> then include it in index.scss, then it works.
+//this can reduce amount of your writing codes and length.
+@mixin flexIt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@import './index.scss';
+// it helps you make better usable style.
